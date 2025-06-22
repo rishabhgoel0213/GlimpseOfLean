@@ -38,7 +38,9 @@ prove one-by-one.
 -/
 
 example (a b : ℝ) (ha : 0 < a) (hb : 0 < b) : 0 < a^2 + b^2 := by
-  sorry
+  apply add_pos
+  exact sq_pos_of_pos ha
+  exact sq_pos_of_pos hb
 
 /-
 You can also give a proof with forward reasoning, using the `have` tactic.
@@ -191,4 +193,3 @@ equivalences. You learned about tactics:
 * `have`
 * `constructor`
 -/
-
